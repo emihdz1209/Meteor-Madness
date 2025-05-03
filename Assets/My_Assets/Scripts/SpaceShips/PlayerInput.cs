@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private Movement movementScript;
+    private Movement _movementScript;
+    [SerializeField] private float steeringSensitivity = 1.5f;
 
     void Start()
     {
-        movementScript = GetComponent<Movement>();
+        _movementScript = GetComponent<Movement>();
     }
 
     void FixedUpdate()
     {
         float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("Horizontal") * steeringSensitivity;
         
-        movementScript.TranslatePlayer(vertical);
-        movementScript.RotatePlayer(horizontal);
+        _movementScript.TranslatePlayer(vertical);
+        _movementScript.RotatePlayer(horizontal);
     }
 }

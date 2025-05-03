@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -15,7 +13,7 @@ public class Movement : MonoBehaviour
 
     public void TranslatePlayer(float input)
     {
-        speed = input * moveSpeed * Time.deltaTime;
+        speed = input * moveSpeed * Time.deltaTime + 0.2f; // Small constant forward push
         transform.Translate(0, 0, speed, Space.Self);
     }
 }
