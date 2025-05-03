@@ -3,17 +3,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    public float moveSpeed = 40f;
-    [SerializeField] private float rotationSpeed = 100f;
+    public float moveSpeed = 40;
 
-    public void RotatePlayer(float input)
+    public void RotatePlayer(float yAxis)
     {
-        transform.Rotate(0, input * rotationSpeed * Time.deltaTime, 0);
+        transform.Rotate(0, yAxis, 0);
     }
 
-    public void TranslatePlayer(float input)
+    public void TranslatePlayer(float verticalAxis)
     {
-        speed = input * moveSpeed * Time.deltaTime + 0.2f; // Small constant forward push
+        speed = verticalAxis * moveSpeed * Time.deltaTime + 0.2f;
         transform.Translate(0, 0, speed, Space.Self);
     }
 }

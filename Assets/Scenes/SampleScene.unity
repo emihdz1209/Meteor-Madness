@@ -253,7 +253,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 772609662}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f2b0448c0d0a1184b89eb9c407d50829,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1621273434}
   m_SourcePrefab: {fileID: 100100000, guid: f2b0448c0d0a1184b89eb9c407d50829, type: 3}
 --- !u!4 &106103544 stripped
 Transform:
@@ -1359,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef9ea402a53ec0469057f853bfd0078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   moveSpeed: 40
 --- !u!114 &649594644
 MonoBehaviour:
@@ -1865,7 +1869,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427462185}
-  - component: {fileID: 1427462184}
   - component: {fileID: 1427462188}
   - component: {fileID: 1427462187}
   - component: {fileID: 1427462186}
@@ -1875,39 +1878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1427462184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427462183}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a25bccf9fb9274b4d9ac248d508d170e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modelTransform: {fileID: 0}
-  smoothTime: 0.3
-  minTilt: 10
-  maxTilt: 45
-  leftGlow: {fileID: 0}
-  rightGlow: {fileID: 0}
-  leftGlowTransform: {fileID: 0}
-  rightGlowTransform: {fileID: 0}
-  idleColor: {r: 0, g: 0, b: 0, a: 1}
-  boostColor: {r: 0, g: 1, b: 1, a: 1}
-  minScale: {x: 0.3, y: 0.3, z: 0.3}
-  maxScale: {x: 1.6, y: 1.6, z: 1.6}
-  glowLerpSpeed: 5
-  scaleSpeed: 5
-  leftEngineParticles: {fileID: 0}
-  rightEngineParticles: {fileID: 0}
-  acceleration: 50
-  deceleration: 30
-  maxSpeed: 100
-  currentSpeed: 0
+  m_IsActive: 0
 --- !u!4 &1427462185
 Transform:
   m_ObjectHideFlags: 0
@@ -1917,7 +1888,7 @@ Transform:
   m_GameObject: {fileID: 1427462183}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 0, z: -0.15}
+  m_LocalPosition: {x: 0.13, y: 0, z: 3.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1936,7 +1907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318f9546871845f48a12ae9b913497b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botSpeed: 0.99
 --- !u!114 &1427462187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,7 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef9ea402a53ec0469057f853bfd0078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.78
+  speed: 0.49
   moveSpeed: 40
 --- !u!1001 &1429526635
 PrefabInstance:
@@ -2157,12 +2127,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573769594}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1621273432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2b0448c0d0a1184b89eb9c407d50829,
+    type: 3}
+  m_PrefabInstance: {fileID: 86734925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1621273433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2b0448c0d0a1184b89eb9c407d50829,
     type: 3}
   m_PrefabInstance: {fileID: 86734925}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621273434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621273432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a25bccf9fb9274b4d9ac248d508d170e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelTransform: {fileID: 654686914}
+  smoothTime: 0.3
+  minTilt: 10
+  maxTilt: 45
+  leftGlow: {fileID: 1000003737}
+  rightGlow: {fileID: 1731775872}
+  leftGlowTransform: {fileID: 1000003735}
+  rightGlowTransform: {fileID: 1731775870}
+  idleColor: {r: 0, g: 0, b: 0, a: 1}
+  boostColor: {r: 0.8324426, g: 1, b: 0.2999999, a: 1}
+  minScale: {x: 0.3, y: 0.3, z: 0.3}
+  maxScale: {x: 1.6, y: 1.6, z: 1.6}
+  glowLerpSpeed: 5
+  scaleSpeed: 5
+  leftEngineParticles: {fileID: 633352806}
+  rightEngineParticles: {fileID: 106103546}
+  acceleration: 50
+  deceleration: 30
+  maxSpeed: 100
+  currentSpeed: 0
 --- !u!1001 &1705356014
 PrefabInstance:
   m_ObjectHideFlags: 0
