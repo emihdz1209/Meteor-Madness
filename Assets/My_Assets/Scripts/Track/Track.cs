@@ -1,4 +1,4 @@
-    using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Track : MonoBehaviour
@@ -9,6 +9,9 @@ public class Track : MonoBehaviour
     private Movement movementScript;
 
     public bool flipPointsAffects;
+
+    public UImanager uimanager;
+
 
     void Start()
     {
@@ -58,7 +61,6 @@ public class Track : MonoBehaviour
 
     void CheckPointAction(Point punto)
     {
-        Debug.Log("Tipo de punto: " +  punto.tipo);
         switch (punto.tipo)
         {
             case 1: //Rojo
@@ -89,6 +91,12 @@ public class Track : MonoBehaviour
                     movementScript.FlipPlayer(false);
                 }
                 break;
+            case 4: //Blanco (win condition true)
+                Debug.Log("Race ended");
+                uimanager.EndRace();
+                indiceActual++; // Move to the next point
+                break;
+
 
             default:
                 break;
@@ -130,7 +138,7 @@ public class Track : MonoBehaviour
         route.Add(new Point(new Vector3(-11.926f,0.500f, -49.372f), 1));
         //route.Add(new Point(new Vector3(-9.414f, 0.500f, -37.614f), 0));
         route.Add(new Point(new Vector3(-4.088f, 0.500f, -27.867f), 0));
-        route.Add(new Point(new Vector3(-0.068f, 0.500f, -13.698f), 0));
+        route.Add(new Point(new Vector3(-0.068f, 0.500f, -13.698f), 4));
 
     }
 
@@ -148,6 +156,7 @@ public class Track : MonoBehaviour
                 case 1: renderer.material.color = Color.red; break;         // curva
                 case 2: renderer.material.color = Color.blue; break;        // subir
                 case 3: renderer.material.color = Color.yellow; break;      // bajar
+                case 4: renderer.material.color = Color.white; break;        // inicio
                 default: renderer.material.color = Color.green; break;      // normal
             }
 

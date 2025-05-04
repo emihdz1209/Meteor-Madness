@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UImanager : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class UImanager : MonoBehaviour
 
     [Header("Animated UI")]
     public RectTransform mercury;           // the bar we grow/shrink
-    
+
+    public string levelToLoad = "Level1";
+
     private Vector2 overlaySize;
     private float    _fullHeight;
 
@@ -76,4 +79,51 @@ public class UImanager : MonoBehaviour
         s.y = toH;
         rt.sizeDelta = s;
     }
+
+    public void EndRace()
+    {
+        Debug.Log("EndRace called!!!!!!!!!");
+        if (string.IsNullOrEmpty(levelToLoad))
+        {
+            Debug.LogError("Scene name is not assigned in the Inspector!");
+            return;
+        }
+
+        // Start the coroutine to handle the delay
+        StartCoroutine(EndRaceCoroutine(levelToLoad));
+    }
+
+    private IEnumerator EndRaceCoroutine(string sceneName)
+{
+    Debug.Log("EndRaceCoroutine called with scene name: " + sceneName);
+
+    // 1) wait a beat
+    yield return new WaitForSeconds(2f);
+
+    // 2) animate overlay from zero → full height
+    float animationDuration = 1f;
+    float elapsedTime       = 0f;
+
+    // use the original size you saved in Awake()
+    Vector2 initialSize = new Vector2(overlaySize.x, 0f);
+    Vector2 targetSize  = overlaySize;
+
+    // make sure it's visible
+    blackOverlay.gameObject.SetActive(true);
+    blackOverlay.sizeDelta = initialSize;
+
+    while (elapsedTime < animationDuration)
+    {
+        elapsedTime += Time.deltaTime;
+        float t = Mathf.Clamp01(elapsedTime / animationDuration);
+        blackOverlay.sizeDelta = Vector2.Lerp(initialSize, targetSize, t);
+        yield return null;
+    }
+
+    // snap to the exact final size
+    blackOverlay.sizeDelta = targetSize;
+
+    // 3) load the scene
+    SceneManager.LoadScene(sceneName);
+}
 }

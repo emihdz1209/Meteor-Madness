@@ -7,7 +7,7 @@ public class MainMenuRetroFader : MonoBehaviour
 {
     [Header("UI Overlays")]
     public RectTransform blackOverlay;      // intro overlay, shrinks away
-    public Image         transitionOverlay; // starts semi-transparent, fades fully on Start
+    public Image transitionOverlay; // starts semi-transparent, fades fully on Start
 
     [Header("Animated UI")]
     public RectTransform titleImage;        // your Title PNG
@@ -15,7 +15,7 @@ public class MainMenuRetroFader : MonoBehaviour
 
     [Header("Audio & Scene")]
     public AudioSource  bgMusic;
-    public string       levelToLoad = "Level1";
+    public string levelToLoad = "Level1";
 
     Vector2 overlaySize;
 

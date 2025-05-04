@@ -21,7 +21,7 @@ public class SocketReceiver : MonoBehaviour
 
     void Start()
     {
-        ConnectToServer("10.43.107.222", 50505); //conexión a host local 
+        ConnectToServer("10.5.0.2", 50505); //conexión a host local 
     }
 
     void ConnectToServer(string host, int port)
@@ -80,10 +80,6 @@ public class SocketReceiver : MonoBehaviour
             }
         }
     }
-
-
-
-
 
     void OnApplicationQuit()
     {

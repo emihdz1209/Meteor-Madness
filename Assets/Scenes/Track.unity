@@ -1570,7 +1570,7 @@ Transform:
   m_GameObject: {fileID: 649594639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 18.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649594639}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0637d11ff2a36c84bb40b7eefbd3ff66, type: 3}
   m_Name: 
@@ -1621,6 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   route: []
   flipPointsAffects: 0
+  uimanager: {fileID: 711445215}
 --- !u!114 &649594644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,7 +1629,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649594639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b6bf8ff495bf6c4e9f740fa58c77ad6, type: 3}
   m_Name: 
@@ -1658,7 +1659,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649594639}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76ef6a97d883a8149ab9a8a22c7a9b38, type: 3}
   m_Name: 
@@ -1983,6 +1984,7 @@ MonoBehaviour:
   player: {fileID: 649594639}
   blackOverlay: {fileID: 1706032430}
   mercury: {fileID: 219329473}
+  levelToLoad: Scenes/Main Menu
 --- !u!4 &711445216
 Transform:
   m_ObjectHideFlags: 0
@@ -4138,6 +4140,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1dcb65827533413449666fc33e03cd50, type: 2}
+    - target: {fileID: 1753849319810469821, guid: c73ad416fed70884aacd8b6887a1bb2b,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 649594641}
     - target: {fileID: 1753849319810469821, guid: c73ad416fed70884aacd8b6887a1bb2b,
         type: 3}
       propertyPath: cameraToFace
