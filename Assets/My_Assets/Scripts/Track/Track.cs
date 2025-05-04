@@ -138,7 +138,7 @@ public class Track : MonoBehaviour
         route.Add(new Point(new Vector3(-11.926f,0.500f, -49.372f), 1));
         //route.Add(new Point(new Vector3(-9.414f, 0.500f, -37.614f), 0));
         route.Add(new Point(new Vector3(-4.088f, 0.500f, -27.867f), 0));
-        route.Add(new Point(new Vector3(-0.068f, 0.500f, -13.698f), 4));
+        route.Add(new Point(new Vector3(-0.068f, 0.500f, -13.698f), 0));
 
     }
 

@@ -44,6 +44,15 @@ public class Billboard : MonoBehaviour
 
             signFlipped = false; // Reset the flag
         }
+
+        //Flip if left click is done
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Flip the object
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1; // Flip the x-axis
+            transform.localScale = localScale;
+        }
     }
 
     void LateUpdate()

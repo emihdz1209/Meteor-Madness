@@ -17,6 +17,9 @@ public class MainMenuRetroFader : MonoBehaviour
     public AudioSource  bgMusic;
     public string levelToLoad = "Level1";
 
+    [SerializeField] private AudioSource musicSource; // Reference to the AudioSource
+    private float originalVolume;
+
     Vector2 overlaySize;
 
     void Awake()
@@ -33,6 +36,13 @@ public class MainMenuRetroFader : MonoBehaviour
         // …but start them “scaled down” to zero
         titleImage.localScale = Vector3.zero;
         playImage .localScale = Vector3.zero;
+
+        // Store the original volume and set it to zero
+        if (musicSource != null)
+        {
+            originalVolume = musicSource.volume;
+            musicSource.volume = 0f;
+        }
     }
 
     void Start()
@@ -41,7 +51,15 @@ public class MainMenuRetroFader : MonoBehaviour
     }
 
     IEnumerator MenuSequence()
-    {
+    {        
+        yield return new WaitForSeconds(10f);
+
+        // Gradually increase the music volume
+        if (musicSource != null)
+        {
+            yield return StartCoroutine(FadeInMusic(2f)); // Adjust fade duration as needed
+        }
+
         // 1) intro: shrink the full-screen black overlay away
         yield return ShrinkHeight(blackOverlay, overlaySize.y, 0f, 1f);
 
@@ -145,5 +163,17 @@ public class MainMenuRetroFader : MonoBehaviour
         }
 
         rt.localScale = Vector3.one;
+    }
+
+    IEnumerator FadeInMusic(float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(0f, originalVolume, elapsed / duration);
+            yield return null;
+        }
+        musicSource.volume = originalVolume;
     }
 }

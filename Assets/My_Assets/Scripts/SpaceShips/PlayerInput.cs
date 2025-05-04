@@ -13,9 +13,9 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("E presionado. Estado actual isFlipping: " + _movementScript.isFlipping);
+            //Debug.Log("E presionado. Estado actual isFlipping: " + _movementScript.isFlipping);
 
             if (!_movementScript.isFlipping)
             {
@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
             }
             else
             {
-                Debug.Log("Flip ignorado porque ya está girando.");
+                //Debug.Log("Flip ignorado porque ya estï¿½ girando.");
             }
         }
     }
@@ -32,7 +32,7 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        _movementScript.TranslatePlayer(Input.GetAxis("Vertical"));
+        //_movementScript.TranslatePlayer(Input.GetAxis("Vertical"));
 
     }
 }
