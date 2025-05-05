@@ -17,7 +17,7 @@ public class Track : MonoBehaviour
     {
         movementScript = GetComponent<Movement>();
         StartPointsList();          // Si cada objeto tiene su ruta
-        //VisualizarPuntos();         // Opcional: puedes mover esto a un solo objeto si no quieres duplicar
+        VisualizarPuntos();         // Opcional: puedes mover esto a un solo objeto si no quieres duplicar
     }
 
     void Update()

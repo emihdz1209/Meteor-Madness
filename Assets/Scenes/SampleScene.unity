@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 649594644}
   - component: {fileID: 649594643}
   - component: {fileID: 649594642}
+  - component: {fileID: 649594645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1008,6 +1009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   route: []
+  flipPointsAffects: 0
+  uimanager: {fileID: 0}
 --- !u!114 &649594643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1026,7 @@ MonoBehaviour:
   speed: 0
   moveSpeed: 40
   puedeMoverse: 1
+  accelerationRate: 2
   isFlipping: 0
 --- !u!114 &649594644
 MonoBehaviour:
@@ -1034,6 +1038,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faffbe88160e803499e790110a2ae8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &649594645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649594639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6bf8ff495bf6c4e9f740fa58c77ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enTecho: 0
@@ -1845,6 +1861,7 @@ MonoBehaviour:
   player: {fileID: 649594639}
   blackOverlay: {fileID: 647582699}
   mercury: {fileID: 1712008692}
+  levelToLoad: Level1
 --- !u!4 &1549044640
 Transform:
   m_ObjectHideFlags: 0
