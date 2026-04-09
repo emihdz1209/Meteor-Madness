@@ -25,13 +25,13 @@ public class Movement : MonoBehaviour
     {
         if (!puedeMoverse)
         {
-            speed = 0f; //0.2f
+            speed = 0.2f;
 
             return;
         }
 
         float dt = Time.deltaTime;
-        float target = verticalAxis * moveSpeed * dt + 0f; //0.2f
+        float target = verticalAxis * moveSpeed * dt + 0.2f;
 
         if (verticalAxis > 0f)
         {
@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
         else
         {
             // no input → hold the base speed exactly
-            speed = 0f; //0.2f
+            speed = 0.2f;
         }
 
         transform.Translate(0f, 0f, speed, Space.Self);

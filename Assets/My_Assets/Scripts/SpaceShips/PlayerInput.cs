@@ -32,7 +32,7 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        //_movementScript.TranslatePlayer(Input.GetAxis("Vertical"));
+        _movementScript.TranslatePlayer(Input.GetAxis("Vertical"));
 
     }
 }
